@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Болгов Александр Сергеевич — Резюме</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #2d3748;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 50px 40px;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .header-photo {
+      flex-shrink: 0;
+    }
+
+    .header-photo img {
+      width: 180px;
+      height: 220px;
+      border-radius: 16px;
+      border: 4px solid white;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-info h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .header-contacts {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    .header-contacts a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .content {
+      padding: 50px 40px;
+    }
+
+    .section {
+      margin-bottom: 45px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #667eea;
+      display: inline-block;
+    }
+
+    .profile-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #4a5568;
+      margin-bottom: 20px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .skill-card {
+      background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+      padding: 18px;
+      border-radius: 12px;
+      border-left: 4px solid #667eea;
+      font-weight: 600;
+      color: #2d3748;
+      text-align: center;
+    }
+
+    .skill-card span {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .job {
+      background: #f7fafc;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border-left: 4px solid #667eea;
+    }
+
+    .job-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 4px;
+    }
+
+    .job-company {
+      font-size: 0.95rem;
+      color: #667eea;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .job-period {
+      font-size: 0.9rem;
+      color: #a0aec0;
+      margin-bottom: 12px;
+    }
+
+    .job-desc {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .job-skills {
+      font-size: 0.85rem;
+      color: #667eea;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .column-item {
+      background: #f7fafc;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid #667eea;
+    }
+
+    .column-item-title {
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 8px;
+    }
+
+    .column-item-text {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 4px solid #667eea;
+      margin-top: 20px;
+    }
+
+    .highlight-box ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .highlight-box li {
+      margin-bottom: 10px;
+      padding-left: 24px;
+      position: relative;
+      font-size: 0.95rem;
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    .highlight-box li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        padding: 30px 25px;
+      }
+
+      .header-photo img {
+        width: 140px;
+        height: 170px;
+      }
+
+      .header-info h1 {
+        font-size: 1.8rem;
+      }
+
+      .content {
+        padding: 30px 25px;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-photo">
+        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/eb91baf1-0c69-410c-8444-9e9ae4b79419" alt="Болгов Александр Сергеевич">
+      </div>
+      <div class="header-info">
+        <h1>Болгов<br>Александр<br>Сергеевич</h1>
+        <div class="header-contacts">
+          <strong>📍 Москва, 21 год</strong><br>
+          <strong>📞</strong> <span dir="ltr">+7 983 501-86-37</span><br>
+          <strong>📧</strong> <a href="mailto:bolgov.sanusha@mail.ru">bolgov.sanusha@mail.ru</a><br>
+          <strong>🎓</strong> ГУП, факультет БЖ (4-й курс, 2025)
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- ПРОФИЛЬ -->
+      <div class="section">
+        <div class="section-title">Профиль</div>
+        <div class="profile-text">
+          Молодой специалист с опытом в менеджменте, администрировании и работе с клиентами. Аналитическое мышление, хорошие коммуникативные навыки, готовность к развитию в digital-маркетинге.
+        </div>
+      </div>
+
+      <!-- ОПЫТ РАБОТЫ -->
+      <div class="section">
+        <div class="section-title">Опыт работы</div>
+
+        <div class="job">
+          <div class="job-title">Администратор</div>
+          <div class="job-company">Коммерческая музыкальная школа НЕШКОЛА</div>
+          <div class="job-period">2023–2024</div>
+          <div class="job-desc">
+            ✓ Управлял расписанием и координировал работу 20+ педагогов и студентов<br>
+            ✓ Организовал 10+ концертов, мастер-классов и мероприятий<br>
+            ✓ Проводил анализ посещаемости и эффективности
+          </div>
+          <div class="job-skills">Релевантные навыки: планирование, координация, анализ данных, организация событий</div>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Риэлтор</div>
+          <div class="job-company">Агентство недвижимости</div>
+          <div class="job-period">2023–2024</div>
+          <div class="job-desc">
+            ✓ Консультировал клиентов и проводил презентации объектов<br>
+            ✓ Вёл переговоры и разрабатывал оптимальные предложения<br>
+            ✓ Работал с базами данных и применял анализ рынка
+          </div>
+          <div class="job-skills">Релевантные навыки: анализ целевой аудитории, работа с данными, презентация</div>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Педагог-организатор</div>
+          <div class="job-company">УМЦ военно-патриотического воспитания АВАНГАРД</div>
+          <div class="job-period">2025</div>
+          <div class="job-desc">
+            ✓ Организовал и провёл мероприятия для 100+ участников<br>
+            ✓ Развивал лидерские качества молодежи через интерактивные программы<br>
+            ✓ Проводил анализ эффективности и собирал обратную связь
+          </div>
+          <div class="job-skills">Релевантные навыки: планирование, работа с аудиториями, анализ результатов</div>
+        </div>
+      </div>
+
+      <!-- КЛЮЧЕВЫЕ НАВЫКИ -->
+      <div class="section">
+        <div class="section-title">Ключевые навыки</div>
+        <div class="skills-grid">
+          <div class="skill-card"><span>📊</span>Аналитика</div>
+          <div class="skill-card"><span>👥</span>Коммуникация</div>
+          <div class="skill-card"><span>📋</span>Организация проектов</div>
+          <div class="skill-card"><span>💬</span>Координация</div>
+          <div class="skill-card"><span>⚡</span>Быстрое обучение</div>
+          <div class="skill-card"><span>📈</span>Планирование</div>
+        </div>
+      </div>
+
+      <!-- ИНСТРУМЕНТЫ И ЯЗЫКИ -->
+      <div class="section">
+        <div class="two-column">
+          <div>
+            <div class="section-title">Инструменты</div>
+            <div class="column-item">
+              <div class="column-item-text">
+                ✓ Microsoft Excel<br>
+                ✓ PowerPoint<br>
+                ✓ CRM-системы<br>
+                ✓ Готов осваивать новые платформы
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="section-title">Языки</div>
+            <div class="column-item">
+              <div class="column-item-text">
+                🇷🇺 Русский — Родной<br>
+                🇬🇧 Английский — Базовый (B1)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ОБРАЗОВАНИЕ -->
+      <div class="section">
+        <div class="section-title">Образование</div>
+        <div class="column-item">
+          <div class="column-item-title">Государственный учебный университет (ГУП)</div>
+          <div class="column-item-text">
+            <strong>Специальность:</strong> Преподаватель БЖ<br>
+            <strong>Статус:</strong> 4-й курс<br>
+            <strong>Окончание:</strong> 2025
+          </div>
+        </div>
+      </div>
+
+      <!-- ПОЧЕМУ Я ПОДХОДЯЩИЙ КАНДИДАТ -->
+      <div class="section">
+        <div class="section-title">Почему я подходящий кандидат</div>
+        <div class="highlight-box">
+          <ul>
+            <li>Активно интересуюсь digital-маркетингом и медиапланированием</li>
+            <li>Готов пройти профессиональные сертификации в области маркетинга</li>
+            <li>Ищу менторство и готов к интенсивному обучению</li>
+            <li>Высокая мотивация к профессиональному развитию</li>
+            <li>Гибкий график и полная готовность к новым вызовам</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
